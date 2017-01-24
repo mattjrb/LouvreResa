@@ -1,0 +1,7 @@
+louvre_resa_homepage:
+    path:     /
+    defaults: { _controller: LouvreResaBundle:Default:index }
+
+louvre_resa_step_one:
+    path:      /resa
+    defaults:  { _controller: LouvreResaBundle:Resa:stepOne }
