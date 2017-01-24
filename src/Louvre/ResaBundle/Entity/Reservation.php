@@ -146,6 +146,7 @@ class Reservation
      */
     public function addVisiteur(\Louvre\ResaBundle\Entity\Visiteur $visiteur)
     {
+        $visiteur->setReservation($this);
         $this->visiteurs[] = $visiteur;
 
         return $this;
@@ -169,5 +170,15 @@ class Reservation
     public function getVisiteurs()
     {
         return $this->visiteurs;
+    }
+
+    public function setVisiteurs($visiteur)
+    {
+        foreach ($visiteurs as $visiteur) 
+        {
+            $this->addvisiteur($visiteur);
+        }
+ 
+    return $this;
     }
 }

@@ -25,7 +25,7 @@ class ReservationType extends AbstractType
                 // render as a single text box
                 'widget' => 'single_text',
                 'html5' => false,
-                'format' => 'yyyy-MM-dd',
+                'format' => 'dd/MM/yyyy',
                 'attr' => ['id' => 'datetimepicker1'],
             ))
             ->add('typeTicket', ChoiceType::class, array(
