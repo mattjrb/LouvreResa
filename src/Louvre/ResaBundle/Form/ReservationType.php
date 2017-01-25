@@ -12,6 +12,9 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+
 
 class ReservationType extends AbstractType
 {
@@ -40,7 +43,14 @@ class ReservationType extends AbstractType
                 'allow_delete' => true
             ))
             ->add('save', SubmitType::class)
-            ->add('email', EmailType::class)        
+            ->add('email', EmailType::class)
+            ->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) {
+                    $resa = $event->getData();
+                    foreach($resa->getVisiteurs() as $visiteur){
+                        $visiteur->setReservation($resa);
+
+                    }
+            })        
             ;
     }
     

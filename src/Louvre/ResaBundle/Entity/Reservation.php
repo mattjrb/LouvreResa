@@ -22,9 +22,9 @@ class Reservation
     private $id;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="dateResa", type="datetime")
+     * @ORM\Column(name="dateResa", type="date")
      */
     private $dateResa;
 
@@ -61,7 +61,7 @@ class Reservation
     /**
      * Set dateResa
      *
-     * @param \DateTime $dateResa
+     * @param \Date $dateResa
      *
      * @return Reservation
      */
@@ -75,7 +75,7 @@ class Reservation
     /**
      * Get dateResa
      *
-     * @return \DateTime
+     * @return \Date
      */
     public function getDateResa()
     {
@@ -147,7 +147,7 @@ class Reservation
     public function addVisiteur(\Louvre\ResaBundle\Entity\Visiteur $visiteur)
     {
         $visiteur->setReservation($this);
-        $this->visiteurs[] = $visiteur;
+        $this->visiteurs->add($visiteur);
 
         return $this;
     }
@@ -172,13 +172,15 @@ class Reservation
         return $this->visiteurs;
     }
 
-    public function setVisiteurs($visiteur)
+    public function setVisiteurs($visiteurs)
     {
         foreach ($visiteurs as $visiteur) 
         {
-            $this->addvisiteur($visiteur);
+            $this->addVisiteur($visiteur);
         }
  
     return $this;
     }
+
+
 }

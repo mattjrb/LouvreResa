@@ -36,9 +36,9 @@ class Visiteur
     private $prenom;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="birthday", type="datetime")
+     * @ORM\Column(name="birthday", type="date")
      */
     private $birthday;
 
@@ -117,7 +117,7 @@ class Visiteur
     /**
      * Set birthday
      *
-     * @param \DateTime $birthday
+     * @param \Date $birthday
      *
      * @return Visiteur
      */
@@ -131,7 +131,7 @@ class Visiteur
     /**
      * Get birthday
      *
-     * @return \DateTime
+     * @return \Date
      */
     public function getBirthday()
     {

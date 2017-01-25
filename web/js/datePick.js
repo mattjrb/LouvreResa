@@ -1,8 +1,8 @@
 $(function() {
     $('#datetimepicker1').datetimepicker({
         locale: 'fr',
-        /*format: 'L',
-*/
+        format: 'L',
+
         /*extraFormats: ['DD-MM-YYYY']*/
         daysOfWeekDisabled: [0, 2],
         minDate: 'now',
@@ -23,13 +23,5 @@ $(function() {
             moment().noel()
 
         ]
-    });
-});
-
-$(function() {
-    $('#datetimepicker2').datetimepicker({
-        locale: 'fr',
-        format: 'L',
-
     });
 });

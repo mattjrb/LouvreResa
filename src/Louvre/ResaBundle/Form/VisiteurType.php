@@ -19,7 +19,13 @@ class VisiteurType extends AbstractType
         $builder
             ->add('nom', TextType::class)
             ->add('prenom', TextType::class)
-            ->add('birthday', DateType::class)
+            ->add('birthday', DateType::class, array(
+                // render as a single text box
+                'widget' => 'single_text',
+                'html5' => false,
+                'format' => 'dd/MM/yyyy',
+                'attr' => ['class' => 'datetimepicker2'],
+            ))
             ->add('country', CountryType::class)
             ;
     }

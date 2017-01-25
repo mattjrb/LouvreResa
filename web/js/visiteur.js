@@ -27,13 +27,24 @@ $(document).ready(function() {
             .replace(/__name__label__/g, 'Visiteur n°' + (index + 1))
             .replace(/__name__/g, index)
             .replace(/Prenom/g, 'Prénom')
-            .replace(/Birthday/g, 'Date de naissance');
+            .replace(/Birthday/g, 'Date de naissance')
+            .replace(/Country/g, 'Pays');
         // On crée un objet jquery qui contient ce template
         var $prototype = $(template);
         // On ajoute au prototype un lien pour pouvoir supprimer la catégorie
         addDeleteLink($prototype);
         // On ajoute le prototype modifié à la fin de la balise <div>
         $container.append($prototype);
+
+        $('.datetimepicker2').datetimepicker({
+            locale: 'fr',
+            format: 'L',
+
+        });
+
+
+
+
         // Enfin, on incrémente le compteur pour que le prochain ajout se fasse avec un autre numéro
         index++;
     }

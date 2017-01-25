@@ -26,6 +26,7 @@
                     {{form_label(form.typeTicket, "Type de ticket", {'label_attr': {'class': 'control-label'}}) }}
                     {{form_errors(form.typeTicket)}}
                     {{form_widget(form.typeTicket)}}
+                    {{form_row(form.email)}}
                 </div>
 
                 <ul class="list-inline pull-right">
@@ -41,7 +42,7 @@
                 <a href="#" id="add_visiteur" class="btn btn-default">Ajouter un visiteur</a>
 
                 {# {{form_row(form.visiteurs)}} #}
-                {{form_row(form.email)}}
+                
                 {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
 
                 <ul class="list-inline pull-right">
